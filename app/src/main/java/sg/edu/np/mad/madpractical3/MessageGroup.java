@@ -22,6 +22,4 @@ public class MessageGroup extends AppCompatActivity {
             return insets;
         });
     }
-
-
 }
