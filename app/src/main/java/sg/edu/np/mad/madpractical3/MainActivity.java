@@ -1,11 +1,10 @@
 package sg.edu.np.mad.madpractical3;
 
-import android.app.AlertDialog;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        int randomint = getIntent().getIntExtra("RANDOM_NUMBER", 0);
+        int randomNumber = getIntent().getIntExtra("RANDOM_NUMBER", 0);
 
         // Initialize a new User object
         User user= new User("John Doe", "MAD Developer", 1, false );
@@ -37,21 +36,20 @@ public class MainActivity extends AppCompatActivity {
         Button btnFollow = findViewById(R.id.button);
         Button btnMsg = findViewById(R.id.button2);
         // Set the TextViews with the User's name, description and default button message
-        tvName. setText(user.getName() + " " + randomint);
-        tvDescription.setText(user.getDescription());
+        tvName. setText(user.name + " " + randomNumber);
+        tvDescription.setText(user.description);
         btnFollow.setText("Follow");
 
         btnFollow.setOnClickListener(view -> {
             String msg;
-            if (user.isFollowed() == false) { // Use == for comparison
+            if (!user.followed) { // Use == for comparison
                 btnFollow.setText("Unfollow");
                 msg = "Followed";
             } else {
                 btnFollow.setText("Follow");
                 msg = "Unfollowed";
             }
-            user.setFollowed(!user.isFollowed());
-            //Toast msg
+            user.followed = !user.followed;            //Toast msg
             Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
 
 
