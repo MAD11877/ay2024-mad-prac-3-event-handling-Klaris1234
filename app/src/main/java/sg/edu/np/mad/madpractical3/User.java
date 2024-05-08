@@ -3,9 +3,17 @@ package sg.edu.np.mad.madpractical3;
 public class User {
     private String name;
     private String description;
-    private Integer id;
-    private Boolean followed;
+    private int id;
+    private boolean followed;
 
+    public User(String name, String description, int id, boolean followed) {
+        this.name = name;
+        this.description = description;
+        this.id = id;
+        this.followed = followed;
+    }
+
+    // Getter methods
     public String getName() {
         return name;
     }
@@ -14,34 +22,29 @@ public class User {
         return description;
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public Boolean getFollowed() {
+    public boolean isFollowed() {
         return followed;
     }
 
-    public void setName(String newName) {
-        this.name = newName;
-    }
-
-    public void setDescription(String newDescription) {
-        this.description = newDescription;
-    }
-
-    public void setId(Integer newId) {
-        this.id = newId;
-    }
-
-    public void setFollowed(Boolean newFollowed) {
-        this.followed = newFollowed;
-    }
-
-    public User(String name, String description, int id, boolean followed) {
+    // Setter methods
+    public void setName(String name) {
         this.name = name;
+    }
+
+    public void setDescription(String description) {
         this.description = description;
+    }
+
+    public void setId(int id) {
         this.id = id;
+    }
+
+    public void setFollowed(boolean followed) {
         this.followed = followed;
     }
 }
+

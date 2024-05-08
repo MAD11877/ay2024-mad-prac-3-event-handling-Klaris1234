@@ -43,14 +43,14 @@ public class MainActivity extends AppCompatActivity {
 
         btnFollow.setOnClickListener(view -> {
             String msg;
-            if (user.getFollowed() == false) { // Use == for comparison
+            if (user.isFollowed() == false) { // Use == for comparison
                 btnFollow.setText("Unfollow");
                 msg = "Followed";
             } else {
                 btnFollow.setText("Follow");
                 msg = "Unfollowed";
             }
-            user.setFollowed(!user.getFollowed());
+            user.setFollowed(!user.isFollowed());
             //Toast msg
             Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
 
